@@ -30,6 +30,10 @@ class MybatisFlexTestApplicationTests {
 		QueryWrapper queryWrapper = QueryWrapper.create()
 				.select()
 				.where(ACCOUNT.AGE.eq(18));// 找不到常量
+		// MyBatis-Flex 使用了 APT（Annotation Processing Tool）技术，
+		// 在项目编译的时候，会自动根据 Entity 类定义的字段帮你生成 "ACCOUNT" 类以及 Entity 对应的 Mapper 类，
+		// 通过开发工具构建项目（如下图），或者执行 maven 编译命令: mvn clean package 都可以自动生成。这个原理和 lombok 一致。
+		// 参考网址：https://mybatis-flex.com/zh/others/apt.html
 		Account account = accountMapper.selectOneByQuery(queryWrapper);
 		System.out.println(account);
 	}

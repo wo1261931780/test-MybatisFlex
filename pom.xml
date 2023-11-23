@@ -75,6 +75,7 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 	</dependencies>
+	<!--项目有个坑，如果没有配置国内的镜像仓库，会导致拉不到依赖，项目启动失败-->
 	<repositories>
 		<!--阿里云搭建了一个国内镜像http://maven.aliyun.com，跑起来速度很快，可以进行配置-->
 		<repository>
