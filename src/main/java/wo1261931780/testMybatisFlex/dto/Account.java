@@ -1,4 +1,4 @@
-package wo1261931780.testMybatisFlex.DTO;
+package wo1261931780.testMybatisFlex.dto;
 
 import com.mybatisflex.annotation.Id;
 import com.mybatisflex.annotation.KeyType;

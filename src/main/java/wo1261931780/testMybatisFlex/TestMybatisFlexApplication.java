@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author junw
  */
 @SpringBootApplication
-@MapperScan("wo1261931780.testMybatisFlex.Mapper")
+@MapperScan("wo1261931780.testMybatisFlex.mapper")
 public class TestMybatisFlexApplication {
 
 	public static void main(String[] args) {

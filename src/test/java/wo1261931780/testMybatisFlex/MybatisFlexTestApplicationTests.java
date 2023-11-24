@@ -1,5 +1,16 @@
 package wo1261931780.testMybatisFlex;
 
+
+import com.mybatisflex.core.query.QueryWrapper;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import wo1261931780.testMybatisFlex.dto.Account;
+import wo1261931780.testMybatisFlex.mapper.AccountMapper;
+
+import static wo1261931780.testMybatisFlex.dto.table.AccountTableDef.ACCOUNT;
+
 /**
  * Created by Intellij IDEA.
  * Project:test-MybatisFlex
@@ -9,17 +20,8 @@ package wo1261931780.testMybatisFlex;
  * @Date 2023-11-12-45  星期四
  * @Description
  */
-import com.mybatisflex.core.query.QueryWrapper;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import wo1261931780.testMybatisFlex.DTO.Account;
-import wo1261931780.testMybatisFlex.Mapper.AccountMapper;
-
-import static wo1261931780.testMybatisFlex.DTO.table.AccountTableDef.ACCOUNT;
-
-
 @SpringBootTest
+@Slf4j
 class MybatisFlexTestApplicationTests {
 
 	@Autowired
@@ -35,7 +37,7 @@ class MybatisFlexTestApplicationTests {
 		// 通过开发工具构建项目（如下图），或者执行 maven 编译命令: mvn clean package 都可以自动生成。这个原理和 lombok 一致。
 		// 参考网址：https://mybatis-flex.com/zh/others/apt.html
 		Account account = accountMapper.selectOneByQuery(queryWrapper);
-		System.out.println(account);
+		log.info(String.valueOf(account));
 	}
 
 }

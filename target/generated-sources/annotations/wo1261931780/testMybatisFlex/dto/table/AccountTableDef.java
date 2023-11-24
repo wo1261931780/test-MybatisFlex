@@ -1,4 +1,4 @@
-package wo1261931780.testMybatisFlex.DTO.table;
+package wo1261931780.testMybatisFlex.dto.table;
 
 import com.mybatisflex.core.query.QueryColumn;
 import com.mybatisflex.core.table.TableDef;

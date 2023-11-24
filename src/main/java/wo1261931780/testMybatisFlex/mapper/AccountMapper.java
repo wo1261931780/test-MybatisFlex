@@ -1,7 +1,7 @@
-package wo1261931780.testMybatisFlex.Mapper;
+package wo1261931780.testMybatisFlex.mapper;
 
 import com.mybatisflex.core.BaseMapper;
-import wo1261931780.testMybatisFlex.DTO.Account;
+import wo1261931780.testMybatisFlex.dto.Account;
 
 /**
  * Created by Intellij IDEA.
