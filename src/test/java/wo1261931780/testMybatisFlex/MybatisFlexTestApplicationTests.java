@@ -1,7 +1,9 @@
 package wo1261931780.testMybatisFlex;
 
 
+import com.mybatisflex.core.BaseMapper;
 import com.mybatisflex.core.query.QueryWrapper;
+import com.mybatisflex.core.update.UpdateWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +40,21 @@ class MybatisFlexTestApplicationTests {
 		// 参考网址：https://mybatis-flex.com/zh/others/apt.html
 		Account account = accountMapper.selectOneByQuery(queryWrapper);
 		log.info(String.valueOf(account));
+	}
+	@Test
+	void testInsert(){
+		Account account = new Account();
+		account.setUserName("liujiajun");
+		account.setAge(18);
+		// account.setBirthday(null);
+		Account entity = UpdateWrapper.of(account).setRaw(Account::getBirthday, "now()").toEntity();
+		accountMapper.insert(entity);
+	}
+	@Test
+	void deleteOne(){
+		QueryWrapper queryWrapper = QueryWrapper.create();
+		queryWrapper.where(ACCOUNT.ID.eq(1L));
+		accountMapper.deleteByQuery(queryWrapper);
 	}
 
 }
